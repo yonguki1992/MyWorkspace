@@ -22,7 +22,7 @@ public class FlowEx17 {
 			System.out.println();
 		}
 		
-		//¹®Á¦ 1 + (1+2) + (1+2+3) ...... + (1+2+.....+49+50)
+		// 1 + (1+2) + (1+2+3) ...... + (1+2+.....+49+50)
 		int sum = 0;
 		int sumTmp = 0;
 		for(int i = 0; i < 50; ++i) {
