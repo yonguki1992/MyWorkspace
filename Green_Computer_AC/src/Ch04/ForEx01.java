@@ -13,12 +13,10 @@ public class ForEx01 {
 		}
 		System.out.println(i + " " + sum);
 		
-		sum = 0;
 		for(i = 0; i <= 100; ++i) {
 			if(i % 5 == 0) {
 				continue;
 			}
-
 			System.out.println(i);
 		}
 	}
