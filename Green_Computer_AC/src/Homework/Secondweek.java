@@ -4,10 +4,9 @@ import static java.lang.System.out;
 
 
 public class Secondweek {
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		example4_6();
+		example4_7();
 	}
 	
 	// 2와 3의 배수가 아닌 수의 합
@@ -79,5 +78,9 @@ public class Secondweek {
 				}
 			}
 		}
+	}
+	
+	static void example4_7() {
+		
 	}
 }
