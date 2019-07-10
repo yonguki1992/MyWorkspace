@@ -194,15 +194,13 @@ public class Secondweek {
 	}
 	
 	static void example4_15() {
-		int number = 12321;
+		int number = 12342321;
 		int tmp = number;
 		
 		int result = 0;
 		
-		for(int i = 0; i < Integer.toString(number).length(); ++i) {
-			if(i > 0 ){
-				result *= 10;
-			}
+		while(tmp != 0) {
+			result *= 10;
 			result += (tmp % 10);
 			tmp /= 10; 
 		}
