@@ -194,7 +194,7 @@ public class Secondweek {
 	}
 	
 	static void example4_15() {
-		int number = 12342321;
+		int number = 12321;
 		int tmp = number;
 		
 		int result = 0;
