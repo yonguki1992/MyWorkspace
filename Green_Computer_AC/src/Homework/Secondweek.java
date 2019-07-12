@@ -102,6 +102,7 @@ public class Secondweek {
 		
 		for(int i = 0; i < str.length(); ++i) {
 			sum += Integer.parseInt(String.valueOf(str.charAt(i)));
+			//sum += str.charAt(i) - '0';
 		}
 		
 		out.println("sum=" + sum);
@@ -143,7 +144,22 @@ public class Secondweek {
 			}
 			out.println();
 		}
+		
+		
+//		for (int i = 1; i <= 9; ++i) {
+//			for (int j = 1; j <= 3; ++j) {
+//				int x = j + 1 + (i - 1) / 3 * 3;
+//				int y = i % 3 == 0 ? 3 : i % 3;
+//				if (x > 9) {
+//					break;
+//				}
+//			}
+//			
+//			if (i % 3 == 0) {
+//			}
+//		}
 	}
+
 	
 	static void example4_13() {
 		String value = "12o34";
@@ -159,7 +175,11 @@ public class Secondweek {
 				isNumber = false;
 				break;
 			}
-				
+			//개선판
+//			if(!('0' <= ch && ch <= '9')) {
+//				isNumber = false;
+//				break;				
+//			}
 		}
 
 		if (isNumber) {
@@ -170,7 +190,7 @@ public class Secondweek {
 	}
 
 	static void example4_14() {
-		int answer = (int)(Math.random()*100);
+		int answer = (int)(Math.random()*100) + 1;
 		int input;
 		int cnt = 0;
 
@@ -181,9 +201,9 @@ public class Secondweek {
 			out.print("1과 100사이의 값을 입력하세요 : ");
 			input = s.nextInt();
 			
-			if(answer - input > 0){
+			if(answer > input){
 				out.println("더 큰 수를 입력하세요.");
-			} else if(answer - input < 0){
+			} else if(answer < input){
 				out.println("더 작은 수를 입력하세요.");
 			} else {
 				out.println("맞췃습니다.\n" + "시도횟수는 "+ cnt +"번입니다.");
@@ -202,7 +222,11 @@ public class Secondweek {
 		while(tmp != 0) {
 			result *= 10;
 			result += (tmp % 10);
-			tmp /= 10; 
+			tmp /= 10;
+			
+			//개선판
+//			result = result * 10 + tmp % 10;
+//			tmp /= 10; 
 		}
 		if(number == result) {
 			out.println(number + "는 회문수 입니다.");
