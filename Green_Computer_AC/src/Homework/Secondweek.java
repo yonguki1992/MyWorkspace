@@ -239,12 +239,12 @@ public class Secondweek {
 }
 
 //향상된 버블 정렬
-//int[] arr = new int[] { 100, 30, 39, 84, 5 };
-//int cnt = 0;
-//int flag = 0, temp = 0;
-//for (int i = 0; i < arr.length; i++) {
-//	if (flag == 0) {
-//		for (int j = 0; j < arr.length - (i + 1); j++) {
+//	int[] arr = new int[] { 30, 100, 39, 84, 5, 11, 3, 8, 2, 10  };
+//	int cnt = 0;
+//	int flag = 0, temp = 0;
+//
+//	for (int i = 1; i <= arr.length; i++) {
+//		for (int j = 0; j < arr.length - i && flag < arr.length - i ; j++) {
 //			// 플래그가 일정 횟수 증가하면 더 이상 정렬하지 않아도 된다고 판단 루프 종료
 //			cnt++;
 //			flag++;
@@ -256,8 +256,9 @@ public class Secondweek {
 //			}
 //		}
 //	}
-//}
-//for (int i = 0; i < arr.length; i++) {
-//	out.printf("%d ", arr[i]);
-//}
-//out.printf("\n총 %d 번 돌았습니다.\n", cnt);
+//	
+//	for (int i = 0; i < arr.length; i++) {
+//		out.printf("%d ", arr[i]);
+//	}
+//	out.printf("\n총 %d 번 돌았습니다.\n", cnt);
+//

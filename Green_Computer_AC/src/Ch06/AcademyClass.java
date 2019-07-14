@@ -41,20 +41,19 @@ class SungJuk {
 		Students temp = new Students();
 		
 		//버블 정렬 사용해서 석차별로 정렬
-		for (int i = 0; i < this.s.length; i++) {
-			if (flag == 0) {
-				for (int j = 0; j < this.s.length - (i + 1); j++) {
-					// 플래그가 일정 횟수 증가하면 더 이상 정렬하지 않아도 된다고 판단 루프 종료
-					cnt++;
-					flag++;
-					if (this.s[j].avg() < this.s[j+1].avg()) {
-						flag = 0;
-						temp = this.s[j];
-						this.s[j] = this.s[j + 1];
-						this.s[j + 1] = temp;
-					}
+		for (int i = 1; i < this.s.length; i++) {
+			// 플래그가 일정 횟수 증가하면 더 이상 정렬하지 않아도 된다고 판단 루프 종료
+			for (int j = 0; j < this.s.length - i && flag < this.s.length - i; j++) {
+				cnt++;
+				flag++;
+				if (this.s[j].avg() < this.s[j + 1].avg()) {
+					flag = 0;
+					temp = this.s[j];
+					this.s[j] = this.s[j + 1];
+					this.s[j + 1] = temp;
 				}
 			}
+			
 		}
 		
 		int n = 0;
