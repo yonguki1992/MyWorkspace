@@ -8,7 +8,7 @@ public class Thirdweek {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		intermediate08();
+		intermediate03();
 	}
 
 	static void example5_03() {
@@ -274,7 +274,6 @@ public class Thirdweek {
 	    scanner.close();
 	}
 	
-	
 	/*
 	 * 여기서부터 알고리즘(중급) 과제
 	 * */
@@ -354,16 +353,14 @@ public class Thirdweek {
 		for(int i = 0; i < array.length && array[i] != 0; ++i) {
 			if(array[i] == array[i+1]) {
 				++cnt;
-				continue;
 			} else {
 				//지수 처리하는 부분
 				//ex) 1024 = 2^10 이런식으로 표시됨. 
 				out.print(array[i] + "^" + cnt );
 				if(array[i+1] != 0) {
-					out.print(" * ");
+					out.print(" X ");
 				}
 				cnt = 1;
-				continue;
 			}
 			
 		}
@@ -573,7 +570,7 @@ public class Thirdweek {
 		for (int i = 1; i <= arr.length; i++) {
 			for (int j = 0; j < arr.length - i && flag < arr.length - i ; j++) {
 				// 플래그가 일정 횟수 증가하면 더 이상 정렬하지 않아도 된다고 판단 루프 종료
-				cnt++;
+				//cnt++;
 				flag++;
 				if (arr[j] > arr[j + 1]) {
 					flag = 0;
@@ -648,17 +645,6 @@ public class Thirdweek {
 		s.close();
 	}
 	
-	static void intermediate14() {
-		int[] Gu = new int[9];
-		for(int a = 1; a <= Gu.length; ++a) {
-			for(int b = 1; b <= Gu.length; ++b) {
-				Gu[a - 1] = a*b;
-				out.printf("%2dX%2d = %2d ", a, b, Gu[a-1]);
-			}
-			out.println();
-		}
-	}
-	
 	static void bubbleSort(int[] arr) {
 		//int cnt = 0;
 		int flag = 0;
@@ -680,6 +666,17 @@ public class Thirdweek {
 //			out.printf("%d ", arr[i]);
 //		}
 //		out.printf("\n총 %d 번 돌았습니다.\n", cnt);
+	}
+	
+	static void intermediate14() {
+		int[] Gu = new int[9];
+		for(int a = 1; a <= Gu.length; ++a) {
+			for(int b = 1; b <= Gu.length; ++b) {
+				Gu[a - 1] = a*b;
+				out.printf("%2dX%2d = %2d ", a, b, Gu[a-1]);
+			}
+			out.println();
+		}
 	}
 	
 }

@@ -29,16 +29,21 @@ public class EducationStatus {
 }
 
 class Manager {
+	static final int LOCAL = 0;
+	static final int MANAGER = 1;
+	static final int JOB_ABILLITY = 2;
+	static final int COMMUNICATION = 3;
+	
 	String local;
 	String manager;
 	int jobAbillity;
 	int communication;
 	
 	public Manager(String... info) {
-		this.local = info[0];
-		this.manager = info[1];
-		this.jobAbillity = Integer.parseInt(info[2]);
-		this.communication = Integer.parseInt(info[3]);
+		this.local = info[LOCAL];
+		this.manager = info[MANAGER];
+		this.jobAbillity = Integer.parseInt(info[JOB_ABILLITY]);
+		this.communication = Integer.parseInt(info[COMMUNICATION]);
 	}
 	
 	public void setLocal(String local) {
@@ -68,12 +73,15 @@ class Manager {
 	public int getCommunication() {
 		return communication;
 	}
+	
 	public int getSum() {
 		return this.communication + this.jobAbillity;
 	}	
+	
 	public float getAvg() {
 		return getSum() / 2.0f;
 	}
+	
 	public String toString() {
 		return String.format("%2s    %3s         %-3d     %-3d     %-3d     %-3.2f", local, manager, jobAbillity, communication, getSum(), getAvg());
 	}
