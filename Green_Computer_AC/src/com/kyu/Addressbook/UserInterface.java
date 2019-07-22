@@ -18,7 +18,7 @@ public class UserInterface {
 	private Addressbook addBook = new Addressbook();
 
 	private UserInterface() {
-
+		UIinit();
 	}
 
 	// UI는 하나만 존재함
@@ -79,7 +79,7 @@ public class UserInterface {
 		}
 	}
 
-	void UIinit() {
+	private void UIinit() {
 //		String str =addBook.getFilePath();
 //		if(StringUtils.equals(str,null)) {
 //			System.out.println("비어있음");
@@ -91,10 +91,10 @@ public class UserInterface {
 			File file = new File(addBook.getFilePath());
 			FileReader reader = new FileReader(file);
 
-			int cur = 0;
+			int cursor = 0;
 			String str = "";
-			while ((cur = reader.read()) != -1) {
-				str += (char)cur;
+			while ((cursor = reader.read()) != -1) {
+				str += (char)cursor;
 			}
 			System.out.print(str);
 			System.out.println();
