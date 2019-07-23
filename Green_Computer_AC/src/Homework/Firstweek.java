@@ -94,7 +94,9 @@ public class Firstweek {
 
 	// 피보나치 일반항
 	static int fibonacci(int n) {
-		if (n == 0) {
+		if( 0 > n) {
+			return -1;
+		} else if (n == 0) {
 			return 0;
 		} else if (n == 1) {
 			return 1;
@@ -107,7 +109,11 @@ public class Firstweek {
 	static int begginer09() {
 		int sum = 0;
 		for (int i = 1; i <= 10; ++i) {
+			if(i < 0) {
+				continue;
+			}
 			sum += fibonacci(i);
+			
 		}
 		return sum;
 	}

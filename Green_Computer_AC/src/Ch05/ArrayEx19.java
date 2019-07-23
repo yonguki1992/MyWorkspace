@@ -20,6 +20,7 @@ public class ArrayEx19 {
 		
 		
 		for(int i = 0; i < score.length; ++i) {
+			out.println(i+1 + "번째 학생의 정보를 입력해 주세요.");
 			for(int j = 0; j < score[i].length - 2; ++j) {
 				score[i][j] = s.nextLine();
 			}	
@@ -81,19 +82,18 @@ public class ArrayEx19 {
 		cnt = 0;
 		int flag = 0;
 		String[] temp = new String[1];
-		for (int i = 0; i < score.length; i++) {
-			if (flag == 0) {
-				for (int j = 0; j < score.length - (i + 1); j++) {
-					// 플래그가 일정 횟수 증가하면 더 이상 정렬하지 않아도 된다고 판단 루프 종료
-					cnt++;
-					flag++;
-					if (Float.parseFloat(score[j][5]) < Float.parseFloat(score[j + 1][5])) {
-						flag = 0;
-						temp = score[j];
-						score[j] = score[j + 1];
-						score[j + 1] = temp;
-					}
+		for (int i = 1; i < score.length; i++) {
+			for (int j = 0; j < score.length - i && flag < score.length - i; j++) {
+				// 플래그가 일정 횟수 증가하면 더 이상 정렬하지 않아도 된다고 판단 루프 종료
+				cnt++;
+				flag++;
+				if (Float.parseFloat(score[j][5]) < Float.parseFloat(score[j + 1][5])) {
+					flag = 0;
+					temp = score[j];
+					score[j] = score[j + 1];
+					score[j + 1] = temp;
 				}
+
 			}
 		}
 		for(int i = 0; i < score.length; ++i) {
