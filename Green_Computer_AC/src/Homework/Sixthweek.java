@@ -4,10 +4,8 @@ public class Sixthweek {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//exercise7_1();
-//		Outer.Inner inner = new Outer().new Inner();
-		System.out.println(new Outer.Inner().value);
-//		inner.method();
+		exercise7_1();
+
 	}
 
 	static void exercise7_1() {
