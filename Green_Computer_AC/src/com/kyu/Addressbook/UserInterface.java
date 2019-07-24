@@ -98,7 +98,6 @@ public class UserInterface {
 			}
 			System.out.print(str);
 			System.out.println();
-			//str을 char[] 만들어서 
 			reader.close();
 		} catch (FileNotFoundException fnfe) {
 			fnfe.getStackTrace();

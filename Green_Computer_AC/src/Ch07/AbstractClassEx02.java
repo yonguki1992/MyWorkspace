@@ -5,10 +5,10 @@ public class AbstractClassEx02 {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		Unit[] group = new Unit[4];
-		group[0] = new Marine();
-		group[1] = new Tank();
-		group[2] = new Dropship();
-		group[3] = new Marine();
+		group[0] = new Marine1();
+		group[1] = new Tank1();
+		group[2] = new Dropship1();
+		group[3] = new Marine1();
 		
 		for(Unit Unit : group) {
 			Unit.move(100, 40);
@@ -26,7 +26,7 @@ abstract class Unit {
 	}
 }
 
-class Marine extends Unit {
+class Marine1 extends Unit {
 	@Override
 	void move(int x, int y) {
 		this.x = x;
@@ -39,7 +39,7 @@ class Marine extends Unit {
 	}
 }
 
-class Tank extends Unit {
+class Tank1 extends Unit {
 	@Override
 	void move(int x, int y) {
 		this.x = x;
@@ -53,7 +53,7 @@ class Tank extends Unit {
 }
 
 
-class Dropship extends Unit {
+class Dropship1 extends Unit {
 	@Override
 	void move(int x, int y) {
 		this.x = x;

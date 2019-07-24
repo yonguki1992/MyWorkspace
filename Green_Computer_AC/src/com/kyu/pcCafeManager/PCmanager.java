@@ -13,13 +13,9 @@ public class PCmanager {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		UImanager ui = UImanager.getUImanagerInstance();
-		
-		try {
-			ui.init();
-			ui.printUI();
-		}catch (InputMismatchException ie){
-			out.println("올바른 값을 입력해 주십시오.");
-		}
+		ui.init();
+		ui.printUI();
+
 		
 	}
 }
@@ -46,8 +42,7 @@ class UImanager {
 		return instance;
 	}
 	
-	//try - catch 버리고 쓰토만 냅둘것
-	public void init() throws InputMismatchException {
+	public void init() {
 		Scanner scan = new Scanner(in);
 		while(this.pcNum == 0) {
 			try {
@@ -55,7 +50,7 @@ class UImanager {
 				this.pcNum = scan.nextInt();
 
 			} catch (Exception e) {
-				scan.next();	//잘못된 값 버리기
+				scan.next();
 				out.println("잘못 입력하셨습니다. 올바른 수량을 입력해 주세요.");
 				
 				continue;
@@ -67,22 +62,22 @@ class UImanager {
 		}
 
 		for (int id = 0; id < this.pc.length; ++id) {
-			out.println("PC " + (id + 1) + "번");
 
-			out.print("PC의 기종을 입력하세요. > ");
-			this.strCpu = scan.next();
+			try {
+				managingPCinfo(id);	
+			} catch(Exception e) {
 
-			out.print("PC의 메모리용량을 입력하세요. > ");
-			this.iMem = scan.nextInt();
-
-			this.pc[id].setPCinfo(id + 1, this.strCpu, this.iMem);
+				out.println("잘못 입력하셨습니다. 올바른 수량을 입력해 주세요.");
+				id--;
+				continue;
+			}
+			
 		}
 		// scan.close();
 	}
-	//do - while 구조 버릴 것
-	//try - catch 버리고 쓰토만 냅둘것
+
 	// 리턴타입 switch 문 파라미터로 할 것
-	public void printUI() throws InputMismatchException {
+	public void printUI() {
 		boolean flag = true;
 		SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
 		Scanner scan = new Scanner(in);
@@ -108,11 +103,11 @@ class UImanager {
 				try {
 					out.print("컴퓨터의 번호를 입력하세요. > ");
 					pcNum = scan.nextInt()-1;
+					pc[pcNum].start(Calendar.getInstance().getTimeInMillis());
 				} catch (Exception e) {
-					scan.next();	//잘못된 값 버리기
 					continue;
 				}
-				pc[pcNum].start(Calendar.getInstance().getTimeInMillis());
+				
 				break;
 			// 관리자로부터 PC번호를 입력받아 해당 PC의 stop 메서드를 호출
 			//갱신할 수 없게 만들어야함.
@@ -120,32 +115,33 @@ class UImanager {
 				try {
 					out.print("컴퓨터의 번호를 입력하세요. > ");
 					pcNum = scan.nextInt()-1;
+					pc[pcNum].stop(Calendar.getInstance().getTimeInMillis());
 				} catch (Exception e) {
-					scan.next();	//잘못된 값 버리기
 					continue;
 				}
-				pc[pcNum].stop(Calendar.getInstance().getTimeInMillis());
+				
 				break;
 				
 			//특정 pc의 사용시간 출력
 			case "3" :
 				try {
+					Calendar c = Calendar.getInstance();
 					out.print("컴퓨터의 번호를 입력하세요. > ");
 					pcNum = scan.nextInt()-1;
+					if (pc[pcNum].getIStop() == 0) {
+						//out.println((pcNum+1) + "번 PC 사용 시간 > " + format.format(new Long(Calendar.getInstance().getTimeInMillis())));
+						
+						out.println((pcNum+1) + "번 PC 사용 시간 > " + format.format(this.pc[pcNum].getTotalTime(c.getTimeInMillis() - 9*3600*1000)));
+					} else {
+						
+						out.println((pcNum+1) + "번 PC 사용 시간 > " + format.format(this.pc[pcNum].getTotalTime(pc[pcNum].getIStop() - 9*3600*1000)));
+					}
 				} catch (Exception e) {
-					scan.next();	//잘못된 값 버리기
 					continue;
 				}
-				Calendar c = Calendar.getInstance();
 				
-				if (pc[pcNum].getIStop() == 0) {
-					//out.println((pcNum+1) + "번 PC 사용 시간 > " + format.format(new Long(Calendar.getInstance().getTimeInMillis())));
-					
-					out.println((pcNum+1) + "번 PC 사용 시간 > " + format.format(this.pc[pcNum].getTotalTime(c.getTimeInMillis() - 9*3600*1000)));
-				} else {
-					
-					out.println((pcNum+1) + "번 PC 사용 시간 > " + format.format(this.pc[pcNum].getTotalTime()));
-				}
+				
+
 				
 				break;
 			// pc 관리
@@ -155,7 +151,6 @@ class UImanager {
 					pcNum = scan.nextInt()-1;
 					managingPCinfo(pcNum);
 				} catch (Exception e) {
-					scan.next();	//잘못된 값 버리기
 					continue;
 				}
 				break;
@@ -166,12 +161,16 @@ class UImanager {
 					if (this.pc[i].getIStart() == 0) {
 						out.println(i + "번 PC는 사용하고 있지 않습니다.");
 						continue;
+					}try {
+						if (this.pc[i].getIStop() == 0) {
+							out.println((i+1) + "번 PC의 사용금액 > " + pc[i].getTotal(Calendar.getInstance().getTimeInMillis()) + " 원");
+						} else {
+							out.println((i+1) + "번 PC의 사용금액 > " + pc[i].getTotal() + " 원");
+						}	
+					}catch (Exception e) {
+						// TODO: handle exception
 					}
-					if (this.pc[i].getIStop() == 0) {
-						out.println((i+1) + "번 PC의 사용금액 > " + pc[i].getTotal(Calendar.getInstance().getTimeInMillis()) + " 원");
-					} else {
-						out.println((i+1) + "번 PC의 사용금액 > " + pc[i].getTotal() + " 원");
-					}
+					
 				}
 				
 				break;
@@ -192,7 +191,7 @@ class UImanager {
 	}
 
 	// 매장 내 PC를 새로 추가하거나 정보를 고칠 때 사용
-	public void managingPCinfo(int id) throws InputMismatchException{
+	public void managingPCinfo(int id) throws Exception{
 		if (this.pc == null) {
 			out.println("등록하신 PC가 없습니다.");
 			return;
