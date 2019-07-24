@@ -105,17 +105,3 @@ class MyTv2 {
 	}
 
 }
-
-class Outer {
-	int value = 10;
-	
-	static class Inner{
-		String value = "hello";
-		void method() {
-			int value = 30;
-			System.out.println(value);
-			System.out.println(this.value);
-			System.out.println();
-		}
-	}
-}
