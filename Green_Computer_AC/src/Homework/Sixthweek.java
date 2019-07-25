@@ -46,7 +46,7 @@ class SutdaDeck {
 	}
 
 	NewSutdaCard pick() {
-		return cards[(int) (Math.random() * (cards.length))];
+		return pick((int) (Math.random() * (cards.length)));
 	}
 }
 
