@@ -17,13 +17,9 @@ public class FormatClassEx1 {
 		
 		Calendar cal = Calendar.getInstance();
 		cal.set(2019, 0, 1);
-		SimpleDateFormat sdf1, sdf2, sdf3, sdf4;
-		SimpleDateFormat sdf5, sdf6, sdf7, sdf8;
+		SimpleDateFormat sdf2;
 		
-		sdf1 = new SimpleDateFormat("yy-M-d");
 		sdf2 = new SimpleDateFormat("''yy년 MM월 dd일 E요일");
-//		System.out.println(sdf1.format(new Date(cal.getTimeInMillis())));
-//		System.out.println(sdf2.format(new Date(cal.getTimeInMillis())));
 		
 		for(int i = 0; i < 12; ++i) {
 			int weekDay = cal.get(Calendar.DAY_OF_WEEK);
