@@ -6,6 +6,7 @@ public class PropertiesEx1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
 		Properties prop = new Properties();
 		
 		prop.setProperty("timeout", "30");
@@ -34,7 +35,7 @@ public class PropertiesEx1 {
 		System.out.println(prop);
 		prop.list(System.out);
 
-
+ 
 		//properties는 value.hashCode() 값으로 정렬함.
 		System.out.println("\n정렬 전 해시코드값");
 		for(Integer a : arr) {
