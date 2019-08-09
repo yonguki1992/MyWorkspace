@@ -1,25 +1,11 @@
-<<<<<<< HEAD
 package com.kyu.pcCafeManager;
 
-import static java.lang.System.*;
+import static java.lang.System.in;
+import static java.lang.System.out;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.InputMismatchException;
 import java.util.Scanner;
-
-public class PCmanager {
-	//try - catch 사용 하여 메서드에서 넘어온 예외 처리 할 것
-	//while 사용하고 printUi의 리턴값에 따라 루프 유지 여부 결정할 것.
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		UImanager ui = UImanager.getUImanagerInstance();
-		ui.init();
-		ui.printUI();
-
-		
-	}
-}
 
 class UImanager {
 	private static UImanager instance;
@@ -30,11 +16,9 @@ class UImanager {
 	private String strCpu = " ";
 	private PCinfo[] pc;
 
-	private UImanager() {
-
-	}
+	private UImanager() {	}
 	
-	//pc방 매니저는 한 사람뿐임.
+	//pc방 매니징 컴퓨터는 한대뿐임.
 	//인스턴스 생성에 제한을 둠
 	public static UImanager getUImanagerInstance() {
 		if(instance == null) {
@@ -77,7 +61,6 @@ class UImanager {
 		// scan.close();
 	}
 
-	// 리턴타입 switch 문 파라미터로 할 것
 	public void printUI() {
 		boolean flag = true;
 		SimpleDateFormat format = new SimpleDateFormat("HH:mm:ss");
@@ -140,11 +123,8 @@ class UImanager {
 				} catch (Exception e) {
 					continue;
 				}
-				
-				
-
-				
 				break;
+				
 			// pc 관리
 			case "4":
 				try {
@@ -237,20 +217,3 @@ class UImanager {
 		// scan.close();
 	}
 }
-=======
-package com.kyu.pcCafeManager;
-
-import com.kyu.pcCafeManager.UImanager;
-
-public class PCmanager {
-	//try - catch 사용 하여 메서드에서 넘어온 예외 처리 할 것
-	//while 사용하고 printUi의 리턴값에 따라 루프 유지 여부 결정할 것.
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		UImanager ui = UImanager.getUImanagerInstance();
-		ui.init();
-		ui.printUI();
-	}
-}
-
->>>>>>> yonguk
