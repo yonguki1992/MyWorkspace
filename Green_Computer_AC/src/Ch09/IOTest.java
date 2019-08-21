@@ -13,7 +13,7 @@ public class IOTest {
 	static final String DEFAULT_PATH = (System.getProperty("user.dir") + "\\").trim();	
 	
 	/*위 소스코드 하드코딩한 것
-	*static final String ABSOLUTE_DIR_PATH = "C:\\Users\\yongu\\Documents\\MyWorkspace\\Green_Computer_AC\\src\\"; 
+	*static final String ABSOLUTE_DIR_PATH = "C:\\Users\\yongu\\Documents\\MyWorkspace\\"; 
 	*/
 	
 	//파일명
