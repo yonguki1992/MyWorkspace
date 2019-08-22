@@ -1,16 +1,13 @@
-package Ch15;
+package Ch11;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Random;
 import java.util.Scanner;
 import java.util.Set;
-
-import Ch15.HanjaVo;
 
 public class TodayHanja {
 

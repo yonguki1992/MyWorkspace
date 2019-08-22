@@ -5,6 +5,8 @@ import java.util.Set;
 import java.util.TreeSet;
 //내가 만든 클래스도 Set에 저장 가능?
 
+import Ch11.HanjaVo;
+
 public class SetEx02 {
 	public static void main(String[] args) {
 		

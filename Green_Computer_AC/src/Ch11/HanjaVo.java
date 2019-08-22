@@ -1,7 +1,6 @@
-package Ch15;
+package Ch11;
 
 import java.io.Serializable;
-
 /*
  * VO(Value Object) : 단순히 데이터만 저장하기 위한 용도의 클래스
  * DTO(Data Transfer Object) : 단순히 데이터만 저장하여 전달하기 위한 목적의 클래스
@@ -9,10 +8,8 @@ import java.io.Serializable;
  * hashCode(), equals(), 또는 Comparable<E>를 구현하면 좋다.
  * 전송, 저장을 하려면, Serializable 인터페이스를 구현해야 함 (구현할 메서드는 없음)
  */
-
-public class HanjaVo implements Comparable<HanjaVo>, Serializable {
+public class HanjaVo implements Comparable<HanjaVo>, Serializable, Cloneable {
 	//Vo 만들기
-	
 	// 1. 변수 선언
 	private String idx;
 	private String h;
@@ -65,6 +62,11 @@ public class HanjaVo implements Comparable<HanjaVo>, Serializable {
 		this.m = m;
 	}
 
+	@Override
+	public String toString() {
+		return "HanjaVo [idx=" + idx + ", h=" + h + ", k=" + k + ", m=" + m + "]";
+	}
+
 	// 4. hashSet 을 사용하려면 아래 hashCode() 및 equals(Object) 를 생성할 것.
 	@Override
 	public int hashCode() {
@@ -107,13 +109,6 @@ public class HanjaVo implements Comparable<HanjaVo>, Serializable {
 		} else if (!m.equals(other.m))
 			return false;
 		return true;
-	}
-
-	
-	
-	@Override
-	public String toString() {
-		return "HanjaVo [idx=" + idx + ", h=" + h + ", k=" + k + ", m=" + m + "]";
 	}
 
 	//5. TreeSet을  사용하려면 Comparable 인터페이스를 구현하면 됨.

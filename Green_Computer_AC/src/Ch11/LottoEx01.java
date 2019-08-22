@@ -14,7 +14,7 @@ public class LottoEx01 {
 
 	public static void main(String[] args) {
 		Excercise01 ex = new Excercise01();
-		IOFunctions io = new IOFunctions("","");
+		IOFunctions io = new IOFunctions("", "");
 
 		runLotto(ex, io);
 	}
@@ -23,7 +23,7 @@ public class LottoEx01 {
 		System.out.print("게임 수 입력 > ");
 		int game = io.inputNumber();
 		String number = io.inputText();
-		for(int i = 0; i < game; ++i)
+		for (int i = 0; i < game; ++i)
 			ex.creatLottoWithCF(number);
 	}
 
@@ -52,29 +52,26 @@ class Excercise01 {
 		Set<Integer> lotto;
 		Random rnd = new Random();
 		/**
-		*lotto = new HashSet<Integer>();	// 중복 잡고 정렬되지 않음
-		*lotto.clear();
-		
-		*while(lotto.size() < 6){
-		*	lotto.add(rnd.nextInt(45)+1);
-		*}
-		*
-		*System.out.println("생성 번호 : "+lotto);
-		*/
-		
-		lotto = new TreeSet<Integer>();	// 중복 잡고, 자동으로 정렬함
+		 * lotto = new HashSet<Integer>(); // 중복 잡고 정렬되지 않음 lotto.clear();
+		 * 
+		 * while(lotto.size() < 6){ lotto.add(rnd.nextInt(45)+1); }
+		 *
+		 * System.out.println("생성 번호 : "+lotto);
+		 */
+
+		lotto = new TreeSet<Integer>(); // 중복 잡고, 자동으로 정렬함
 		lotto.clear();
-		while(lotto.size() < 6){
-			lotto.add(rnd.nextInt(45)+1);
+		while (lotto.size() < 6) {
+			lotto.add(rnd.nextInt(45) + 1);
 		}
-		System.out.println("생성 번호 : "+lotto);
+		System.out.println("생성 번호 : " + lotto);
 		String[] tmp = number.split(",");
 		List<String> list = Arrays.asList();
 		TreeSet<String> correctN = new TreeSet<String>(list);
-		System.out.println("당첨 번호 : "+correctN);
+		System.out.println("당첨 번호 : " + correctN);
 		// 당첨번호와 같은지 찾는 문장 작성할 것.
 	}
-	
+
 	void creatLottoWithoutSort() {
 		int[] lotto = new int[45];
 		Random rnd = new Random();
@@ -151,6 +148,5 @@ class Excercise01 {
 
 		System.out.println();
 	}
-	
-	
+
 }
