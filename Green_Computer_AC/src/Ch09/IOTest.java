@@ -10,7 +10,7 @@ import java.util.StringTokenizer;
 public class IOTest {
 	
 	// 현재 프로젝트 DIR의 절대경로 받아오기
-	static final String DEFAULT_PATH = (System.getProperty("user.dir") + "\\").trim();	
+	static final String DEFAULT_PATH = (System.getProperty("user.dir") + "\\etc\\").trim();	
 	
 	/*위 소스코드 하드코딩한 것
 	*static final String ABSOLUTE_DIR_PATH = "C:\\Users\\yongu\\Documents\\MyWorkspace\\"; 
@@ -31,7 +31,7 @@ public class IOTest {
 			fr = new FileReader(file);
 			int cur = 0;
 			
-			fr.read();	//버퍼 한번 비움 (ex : "﻿100" -> 평범한 100처럼 보이지만 1 왼쪽에 알 수 없는 특문이 하나 더 있옴, 커서 가져다 대보면 암)
+			//fr.read();	//버퍼 한번 비움 (ex : "﻿100" -> 평범한 100처럼 보이지만 1 왼쪽에 알 수 없는 특문이 하나 더 있옴, 커서 가져다 대보면 암)
 			while((cur = fr.read()) != -1) {
 				str += (char)cur;
 			}

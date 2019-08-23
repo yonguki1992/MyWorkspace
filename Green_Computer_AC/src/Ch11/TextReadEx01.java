@@ -22,7 +22,7 @@ public class TextReadEx01 {
 	private static void chunjamoon() {
 		Scanner scan = null;
 		try {
-			scan = new Scanner(new File(System.getProperty("user.dir")+"\\chunja.txt"));
+			scan = new Scanner(new File(System.getProperty("user.dir")+"\\etc\\chunja.txt"));
 			while(scan.hasNextLine()) {
 				String hanja[] = scan.nextLine().split("\\|");
 				System.out.println(hanja[0] +"."+hanja[1]+"("+hanja[3]+")");
@@ -38,7 +38,7 @@ public class TextReadEx01 {
 	private static void chunjamoon2() {
 		try {
 			// 파일 객체 생성
-			File file = new File(System.getProperty("user.dir")+"\\chunja.txt");
+			File file = new File(System.getProperty("user.dir")+"\\etc\\chunja.txt");
 			FileReader reader = new FileReader(file);
 
 			int cursor = 0;

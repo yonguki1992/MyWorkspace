@@ -51,7 +51,7 @@ public class TodayHanja {
 		List<HanjaVo> list = new ArrayList<>();
 		Scanner scan = null;
 		try {
-			scan = new Scanner(new File(System.getProperty("user.dir")+"\\chunja2.txt"));
+			scan = new Scanner(new File(System.getProperty("user.dir")+"\\etc\\chunja2.txt"));
 			while(scan.hasNextLine()) {
 				String hanja[] = scan.nextLine().split("\\|");
 				//System.out.println(hanja[0] +"."+hanja[1]+"("+hanja[3]+")");
@@ -75,7 +75,7 @@ public class TodayHanja {
 		List<HanjaVo> list = new ArrayList<>();
 		Scanner scan = null;
 		try {
-			scan = new Scanner(new File(System.getProperty("user.dir")+"\\chunja.txt"));
+			scan = new Scanner(new File(System.getProperty("user.dir")+"\\etc\\chunja.txt"));
 			while(scan.hasNextLine()) {
 				String hanja[] = scan.nextLine().split("\\|");
 				//System.out.println(hanja[0] +"."+hanja[1]+"("+hanja[3]+")");

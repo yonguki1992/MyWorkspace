@@ -11,7 +11,10 @@ public class IOFunctions {
 	final String INPUT_MISMATCH_ALERT;
 	final String INPUT_ALERT;
 	private Scanner s = new Scanner(in);
-	
+	public IOFunctions() {
+		// TODO Auto-generated constructor stub
+		this("올바른 숫자를 입력해 주세요.", "올바른 문자열을 입력해 주세요.");
+	}
 	public IOFunctions(String... args) {
 		this.INPUT_MISMATCH_ALERT = args[0];
 		this.INPUT_ALERT = args[1];
@@ -43,10 +46,10 @@ public class IOFunctions {
 				flag = false;
 			} catch (InputMismatchException ime) {
 				// TODO: handle exception
-				out.print(this.INPUT_MISMATCH_ALERT+". > ");
+				out.print(this.INPUT_MISMATCH_ALERT+" > ");
 				s.next(); // 스캐너버퍼 비우기
 			} catch (Exception e) {
-				out.print(this.INPUT_ALERT+". > ");
+				out.print(this.INPUT_ALERT+" > ");
 				s.next(); // 스캐너버퍼 비우기
 			}
 		}

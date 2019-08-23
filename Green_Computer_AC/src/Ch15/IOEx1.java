@@ -8,9 +8,9 @@ public class IOEx1 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Stream<File> fS = Stream.of(new File(System.getProperty("user.dir") + "\\test.txt")
-								,new File(System.getProperty("user.dir") + "\\test.txt")
-								,new File(System.getProperty("user.dir") + "\\test"));
+		Stream<File> fS = Stream.of(new File(System.getProperty("user.dir") + "\\etc\\test.txt")
+								,new File(System.getProperty("user.dir") + "\\etc\\test.txt")
+								,new File(System.getProperty("user.dir") + "\\etc\\test"));
 		
 		fS.map(File::getName)
 		  .filter(s->s.indexOf('.') != -1)
