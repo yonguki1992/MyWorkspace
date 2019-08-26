@@ -93,7 +93,7 @@ public class UserInterface {
 
 			int cursor = 0;
 			String str = "";
-			reader.read();
+			//reader.read();
 			while ((cursor = reader.read()) != -1) {
 				str += (char)cursor;
 			}

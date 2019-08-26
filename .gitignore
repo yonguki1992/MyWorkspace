@@ -5,6 +5,7 @@
 .metadata
 bin/
 tmp/
+etc/
 *.tmp
 *.bak
 *.swp
@@ -95,4 +96,5 @@ local.properties
 hs_err_pid*
 
 # End of https://www.gitignore.io/api/java,eclipse
-text.txt
+
+Servers/

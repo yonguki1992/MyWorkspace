@@ -9,8 +9,7 @@ public class Addressbook {
 	protected Vector vecRs;
 	protected DataInputStream dis;
 	protected int imenu;
-	private String filePath = "C:/Users/yongu/Desktop/yonguk_javaPractice/AddressBook/address.txt";
-
+	private String filePath = System.getProperty("user.dir")+"\\etc\\AddressBook\\address.txt";
 	
 	public Addressbook() {
 		vecRs = new Vector(50);
