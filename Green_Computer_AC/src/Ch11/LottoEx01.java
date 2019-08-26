@@ -14,12 +14,12 @@ public class LottoEx01 {
 
 	public static void main(String[] args) {
 		Excercise01 ex = new Excercise01();
-		IOFunctions io = new IOFunctions("", "");
+		ScannerFunctions io = new ScannerFunctions("", "");
 
 		runLotto(ex, io);
 	}
 
-	private static void runLotto(Excercise01 ex, IOFunctions io) {
+	private static void runLotto(Excercise01 ex, ScannerFunctions io) {
 		System.out.print("게임 수 입력 > ");
 		int game = io.inputNumber();
 		String number = io.inputText();

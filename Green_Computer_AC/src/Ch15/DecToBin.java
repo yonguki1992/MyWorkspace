@@ -9,7 +9,7 @@ public class DecToBin {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		IOFunctions io = new IOFunctions("", "");
+		ScannerFunctions io = new ScannerFunctions("", "");
 		System.out.println("1~255 이내의 정수를 입력하시오");
 		int dec = io.inputNumber();
 		int exponent = 1;

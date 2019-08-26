@@ -1,12 +1,12 @@
 package Ch12;
 
-import MyLib.IOFunctions;
+import MyLib.ScannerFunctions;
 
 public class EnumEx2 {
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		IOFunctions ioFunc = new IOFunctions("올바른 숫자를 입력해주세요","올바른 문자열을 입력해주세요");
+		ScannerFunctions ioFunc = new ScannerFunctions("올바른 숫자를 입력해주세요","올바른 문자열을 입력해주세요");
 		Kind1[] kArr = Kind1.values();
 
 		for (Kind1 arr : kArr) {

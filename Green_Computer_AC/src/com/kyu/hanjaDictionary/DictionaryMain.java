@@ -9,13 +9,13 @@ import java.util.TreeMap;
 import org.apache.commons.lang3.StringUtils;
 
 import Ch11.HanjaVo;
-import MyLib.IOFunctions;
+import MyLib.ScannerFunctions;
 
 public class DictionaryMain {
 
 	public static void main(String[] args) {
 
-		IOFunctions io = new IOFunctions("", "");
+		ScannerFunctions io = new ScannerFunctions("", "");
 		Map<String, HanjaVo> map = loadChunja();
 
 		while (true) {

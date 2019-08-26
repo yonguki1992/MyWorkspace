@@ -15,7 +15,7 @@ public class Ex05 {
 	
 	
 	public static void main(String[] args) {
-		IOFunctions io = new IOFunctions("","");
+		ScannerFunctions io = new ScannerFunctions("","");
 		
 		String idNum = io.inputText();
 

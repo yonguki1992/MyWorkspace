@@ -2,11 +2,11 @@ package Ch15;
 
 import org.apache.commons.lang3.StringUtils;
 
-import MyLib.IOFunctions;
+import MyLib.ScannerFunctions;
 
 public class Ex06 {
 	public static void main(String[] args) {
-		IOFunctions io = new IOFunctions("","");
+		ScannerFunctions io = new ScannerFunctions("","");
 		String id = "";
 		while(true){
 			id = io.inputText();
