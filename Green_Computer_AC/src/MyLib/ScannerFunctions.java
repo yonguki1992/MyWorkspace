@@ -3,11 +3,12 @@ package MyLib;
 import static java.lang.System.*;
 import java.io.IOException;
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import org.apache.commons.lang3.StringUtils;
 
 public class ScannerFunctions {
-
+	
 	final String INPUT_MISMATCH_ALERT;
 	final String INPUT_ALERT;
 	private Scanner s = new Scanner(in);
@@ -60,8 +61,27 @@ public class ScannerFunctions {
 		while (StringUtils.equals(str, null)) {
 			try {
 				str = s.next();
+			} catch (NoSuchElementException e) {
+				out.println(this.INPUT_ALERT+" > ");
+				s.next(); // 스캐너버퍼 비우기
 			} catch (Exception e) {
-				out.println(this.INPUT_ALERT);
+				out.println(this.INPUT_ALERT+" > ");
+				s.next(); // 스캐너버퍼 비우기
+			}
+		}
+		return str;
+	}
+	
+	public String inputTextLine() {
+		String str = null;
+		while (StringUtils.equals(str, null)) {
+			try {
+				str = s.nextLine();
+			} catch (NoSuchElementException e) {
+				out.println(this.INPUT_ALERT+" > ");
+				s.next(); // 스캐너버퍼 비우기
+			} catch (Exception e) {
+				out.println(this.INPUT_ALERT+" > ");
 				s.next(); // 스캐너버퍼 비우기
 			}
 		}
