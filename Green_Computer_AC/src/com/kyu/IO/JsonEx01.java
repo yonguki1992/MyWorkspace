@@ -26,7 +26,7 @@ public class JsonEx01 {
 		List<Integer> list = gson.fromJson(data2, new TypeToken<List<Integer>>() {}.getType());
 		System.out.println(list);
 		
-		//
+		//toJson 에 파일 라이터가 매개변수로 들어감
 		try {
 			FileWriter fw = new FileWriter(System.getProperty("user.dir")+"\\etc\\json\\testJson.json");
 			gson.toJson(ar2,fw);
